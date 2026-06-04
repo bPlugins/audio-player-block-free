@@ -14213,23 +14213,17 @@ const MP3Player = (selector, songs = [], options = {}, onIndexChange) => {
 
   // Go to next song
   function gotoNextSong(playImmediately) {
-    const goToNext = () => {
-      if (songIndex === songs.length - 1) {
-        songIndex = 0;
-      } else {
-        songIndex = songIndex + 1;
-      }
-      const isDiscPlayingNow = !disc.paused;
-      loadSong(songs[songIndex]);
-      resetProgress();
-      if (isDiscPlayingNow || playImmediately) {
-        playPauseMedia();
-      }
-    };
-    if (songIndex < songs.length - 1) {
-      goToNext();
-    } // Stop at end of album
-
+    if (songIndex === songs.length - 1) {
+      songIndex = 0;
+    } else {
+      songIndex = songIndex + 1;
+    }
+    const isDiscPlayingNow = !disc.paused;
+    loadSong(songs[songIndex]);
+    resetProgress();
+    if (isDiscPlayingNow || playImmediately) {
+      playPauseMedia();
+    }
     onIndexChange && onIndexChange(songIndex);
   }
 
@@ -15202,7 +15196,7 @@ const prevIcon = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.
   viewBox: "0 0 512 512",
   width: "100%",
   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    d: "M11.5 280.6l192 160c20.6 17.2 52.5 2.8 52.5-24.6V96c0-27.4-31.9-41.8-52.5-24.6l-192 160c-15.3 12.8-15.3 36.4 0 49.2zm256 0l192 160c20.6 17.2 52.5 2.8 52.5-24.6V96c0-27.4-31.9-41.8-52.5-24.6l-192 160c-15.3 12.8-15.3 36.4 0 49.2z"
+    d: "M64 468V44c0-6.6 5.4-12 12-12h48c6.6 0 12 5.4 12 12v176.4l195.5-181C352.1 22.3 384 36.6 384 64v384c0 27.4-31.9 41.7-52.5 24.6L136 292.7V468c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12z"
   })
 });
 const nextIcon = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
@@ -15210,7 +15204,7 @@ const nextIcon = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.
   viewBox: "0 0 512 512",
   width: "100%",
   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    d: "M500.5 231.4l-192-160C287.9 54.3 256 68.6 256 96v320c0 27.4 31.9 41.8 52.5 24.6l192-160c15.3-12.8 15.3-36.4 0-49.2zm-256 0l-192-160C31.9 54.3 0 68.6 0 96v320c0 27.4 31.9 41.8 52.5 24.6l192-160c15.3-12.8 15.3-36.4 0-49.2z"
+    d: "M384 44v424c0 6.6-5.4 12-12 12h-48c-6.6 0-12-5.4-12-12V291.6l-195.5 181C95.9 489.7 64 475.4 64 448V64c0-27.4 31.9-41.7 52.5-24.6L312 219.3V44c0-6.6 5.4-12 12-12h48c6.6 0 12 5.4 12 12z"
   })
 });
 const backwordIcon = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {

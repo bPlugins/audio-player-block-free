@@ -122,24 +122,18 @@ const MP3Player = (selector, songs = [], options = {}, onIndexChange) => {
 
 	// Go to next song
 	function gotoNextSong(playImmediately) {
-		const goToNext = () => {
-			if (songIndex === songs.length - 1) {
-				songIndex = 0;
-			} else {
-				songIndex = songIndex + 1;
-			}
-
-			const isDiscPlayingNow = !disc.paused;
-			loadSong(songs[songIndex]);
-			resetProgress();
-			if (isDiscPlayingNow || playImmediately) {
-				playPauseMedia();
-			}
+		if (songIndex === songs.length - 1) {
+			songIndex = 0;
+		} else {
+			songIndex = songIndex + 1;
 		}
 
-		if (songIndex < songs.length - 1) {
-			goToNext()
-		} // Stop at end of album
+		const isDiscPlayingNow = !disc.paused;
+		loadSong(songs[songIndex]);
+		resetProgress();
+		if (isDiscPlayingNow || playImmediately) {
+			playPauseMedia();
+		}
 
 		onIndexChange && onIndexChange(songIndex);
 	}
