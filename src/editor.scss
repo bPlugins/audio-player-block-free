@@ -1,0 +1,44 @@
+$primaryColor: #4527a4;
+
+.wp-block-bpmp-mp3-player {
+
+  .bpmpInspectorInfo {
+    padding: 6px;
+
+    a {
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+
+}
+
+.components-button.button.button-primary.has-icon {
+  border-radius: 0px;
+  height: 32px;
+}
+
+.addItem Button:hover {
+  background-color: #{$primaryColor};
+  color: white !important;
+}
+
+.bpMp3PlayerError {
+  color: red !important;
+  text-align: center;
+  font-size: 20px;
+}
+
+.colorSchema {
+  margin-top: 20px;
+}
+
+.pickr {
+  margin-top: -35px;
+  margin-left: 34px;
+}
+
+
+.pcr-button {
+  margin-left: 170px;
+}
