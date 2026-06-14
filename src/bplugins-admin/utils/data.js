@@ -1,7 +1,10 @@
+import React from 'react';
+import { gutenbergTabIcon, shortcodeTabIcon } from "./icons";
+
 const slug = 'audio-player-block';
 
 export const dashboardInfo = (info) => {
-	const { version, isPremium, hasPro, deleteDataOnUninstall, uninstallNonce } = info;
+	const { version, isPremium, hasPro, deleteDataOnUninstall, uninstallNonce, adminUrl = '' } = info;
 
 	const proSuffix = isPremium ? ' Pro' : '';
 
@@ -15,6 +18,7 @@ export const dashboardInfo = (info) => {
 		hasPro,
 		deleteDataOnUninstall,
 		uninstallNonce,
+		adminUrl,
 		displayOurPlugins: true,
 		media: {
 			logo: `https://ps.w.org/${slug}/assets/icon-128x128.png`,
@@ -33,43 +37,9 @@ export const dashboardInfo = (info) => {
 			plan_id: 28715,
 			public_key: 'pk_44dc77a45966f6bb4960f3efe87d5',
 		},
-
-		changelogs: [
-			{
-				type: 'new',
-				version: '1.6.0 - 04 June, 2026',
-				list: [
-					'New: Added uninstall data cleanup settings in dashboard.',
-					'Improved: Unlocked previously locked pro fields in the Gutenberg editor and introduced a clean, non-intrusive notices UI to display premium feature requirements.',
-					'Update: Redesigned the shortcode copy-to-clipboard UI column in the audio player CPT admin table for a better user experience.',
-					'Update: Streamlined editor Settings controls for free users, focusing on Default and Slider theme controls.',
-					'Update: Removed Pro-only theme styling and assets to reduce package footprint.',
-				]
-			},
-			{
-				type: 'fix',
-				version: '1.5.2 - 09 April, 2026',
-				list: [
-					'Fix: Fixed class naming conflict and namespace resolution issue in LicenseActivation.',
-					'Update: Updated Freemius SDK new version.'
-				]
-			}
-
-		],
-		proFeatures: [
-			'5 Premium Theme Customization',
-			'Advanced Playlist Navigation',
-			'Forward & Backward Skip Buttons',
-			'Full Time Display Control',
-			'Thumbnail Border & Radius Control',
-			'Artist Opacity Control',
-			'Auto height for all tracks',
-			'Download Audio Option',
-			'Complete Player UI Customization'
-		],
 		startButton: {
 			label: 'Start Now',
-			url: 'wp-admin/post-new.php?post_type=audio_player_block'
+			url: `${adminUrl}post-new.php?post_type=audio_player_block`
 		}
 	}
 }
@@ -132,7 +102,6 @@ export const demoInfo = {
 			</svg>,
 			"type": 'image'
 		},
-
 	]
 }
 
@@ -152,3 +121,99 @@ export const pricingInfo = {
 		selected: 3,
 	}
 }
+
+export const welcomeInfo = (adminUrl) => ({
+	keywords: ['Audio Player', 'Gutenberg Block', 'Shortcode', 'Playlist Support', 'Audio Block', 'Volume Customization'],
+	keywordsLabel: 'Features',
+	gettingStarted: {
+		tabs: [
+			{
+				key: 'gutenberg',
+				label: 'Gutenberg',
+				icon: gutenbergTabIcon,
+				steps: [
+					{
+						num: 1,
+						title: 'Add the Audio Player Block',
+						body: 'Open the block editor on any page or post. Click the <strong>+</strong> icon in the top-left corner or type <strong>/Audio Player</strong> to insert the block.',
+						link: { url: `${adminUrl}post-new.php?post_type=page`, label: 'Open Editor' }
+					},
+					{
+						num: 2,
+						title: 'Add Audio File',
+						body: 'Select a single audio file or choose multiple audio files from your media library to build a playlist player.'
+					},
+					{
+						num: 3,
+						title: 'Customize Styles',
+						body: 'Configure player themes, colors, player UI options, volume control, and metadata settings in the block sidebar. Publish your page.'
+					}
+				]
+			},
+			{
+				key: 'shortcode',
+				label: 'Shortcode',
+				icon: shortcodeTabIcon,
+				steps: [
+					{
+						num: 1,
+						title: 'Create a New Player',
+						body: 'Navigate to <strong>Audio Player -> Add New</strong>. Give it a title and select your audio tracks/settings.',
+						link: { url: `${adminUrl}post-new.php?post_type=audio_player_block`, label: 'Add New' }
+					},
+					{
+						num: 2,
+						title: 'Configure Settings',
+						body: 'Set up playlist details, track title, customize colors, choose block styles, and click <strong>Publish</strong>.'
+					},
+					{
+						num: 3,
+						title: 'Copy & Paste Shortcode',
+						body: 'Copy the generated shortcode (e.g. <code>[audio_player_block id="123"]</code>) from the player editor screen or list, and paste it into any post, page, or widget.'
+					}
+				]
+			}
+		]
+	},
+	changelogs: [
+		{
+			type: 'update',
+			version: '1.6.1 - 14 June, 2026',
+			list: [
+				'Updated: Modernized the admin settings dashboard layout.'
+			]
+		},
+		{
+			type: 'new',
+			version: '1.6.0 - 04 June, 2026',
+			list: [
+				'New: Added uninstall data cleanup settings in dashboard.',
+				'Improved: Unlocked previously locked pro fields in the Gutenberg editor and introduced a clean, non-intrusive notices UI to display premium feature requirements.',
+				'Update: Redesigned the shortcode copy-to-clipboard UI column in the audio player CPT admin table for a better user experience.',
+				'Update: Streamlined editor Settings controls for free users, focusing on Default and Slider theme controls.',
+				'Update: Removed Pro-only theme styling and assets to reduce package footprint.',
+			]
+		},
+		{
+			type: 'fix',
+			version: '1.5.2 - 09 April, 2026',
+			list: [
+				'Fix: Fixed class naming conflict and namespace resolution issue in LicenseActivation.',
+				'Update: Updated Freemius SDK new version.'
+			]
+		}
+	],
+	changelogsLimit: 5,
+	changelogsReadMoreLabel: 'View More Changelogs',
+	proFeatures: [
+		'5 Premium Theme Customization',
+		'Advanced Playlist Navigation',
+		'Forward & Backward Skip Buttons',
+		'Full Time Display Control',
+		'Thumbnail Border & Radius Control',
+		'Artist Opacity Control',
+		'Auto height for all tracks',
+		'Download Audio Option',
+		'Complete Player UI Customization'
+	]
+})

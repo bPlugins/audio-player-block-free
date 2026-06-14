@@ -5,7 +5,7 @@
 [![WordPress Support](https://img.shields.io/badge/WordPress-6.5+-blue.svg?style=flat-square&logo=wordpress)](https://wordpress.org/plugins/audio-player-block/)
 [![PHP Support](https://img.shields.io/badge/PHP-7.1+-777bb4.svg?style=flat-square&logo=php)](https://wordpress.org/plugins/audio-player-block/)
 [![GPLv3 License](https://img.shields.io/badge/License-GPLv3-green.svg?style=flat-square)](https://wordpress.org/plugins/audio-player-block/)
-[![Stable Version](https://img.shields.io/badge/Version-1.6.0-blue.svg?style=flat-square)](https://wordpress.org/plugins/audio-player-block/)
+[![Stable Version](https://img.shields.io/badge/Version-1.6.1-blue.svg?style=flat-square)](https://wordpress.org/plugins/audio-player-block/)
 
 **Audio Player Block** is a lightweight, high-performance, and fully responsive Gutenberg block and shortcode plugin for WordPress. It allows your website visitors to listen to music and customize audio players seamlessly in your posts or pages.
 
