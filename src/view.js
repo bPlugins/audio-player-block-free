@@ -5,7 +5,7 @@ import Style from './Components/Common/Style';
 
 document.addEventListener('DOMContentLoaded', () => {
   const mp3PlayerEls = document.querySelectorAll('.wp-block-bpmp-mp3-player');
-  mp3PlayerEls.forEach((mp3PlayerEl) => {
+  mp3PlayerEls?.forEach((mp3PlayerEl) => {
     const dataAttributes = mp3PlayerEl.dataset.attributes;
 
     if (dataAttributes) {
@@ -25,5 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
       console.warn('No data-attributes found for', mp3PlayerEl);
     }
   });
+
+
 });
+
 

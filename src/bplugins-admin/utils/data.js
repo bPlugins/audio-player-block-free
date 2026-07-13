@@ -1,5 +1,5 @@
 import React from 'react';
-import { gutenbergTabIcon, shortcodeTabIcon } from "./icons";
+import { gutenbergTabIcon, shortcodeTabIcon, elementorTabIcon } from "./icons";
 
 const slug = 'audio-player-block';
 
@@ -172,10 +172,40 @@ export const welcomeInfo = (adminUrl) => ({
 						body: 'Copy the generated shortcode (e.g. <code>[audio_player_block id="123"]</code>) from the player editor screen or list, and paste it into any post, page, or widget.'
 					}
 				]
+			},
+			{
+				key: 'elementor',
+				label: 'Elementor',
+				icon: elementorTabIcon,
+				steps: [
+					{
+						num: 1,
+						title: 'Create a New Player',
+						body: 'Go to <strong>Audio Player -> Add New</strong>. Enter a title, select your audio tracks/settings, and click <strong>Publish</strong> to generate a shortcode.',
+						link: { url: `${adminUrl}post-new.php?post_type=audio_player_block`, label: 'Add New' }
+					},
+					{
+						num: 2,
+						title: 'Open Elementor Editor',
+						body: 'Open the Elementor editor on any page or post. Search for the <strong>Shortcode</strong> widget and drag it to your desired layout section.'
+					},
+					{
+						num: 3,
+						title: 'Embed Shortcode',
+						body: 'Paste the generated shortcode (e.g. <code>[audio_player_block id="123"]</code>) into the Shortcode widget content settings, and then update/publish the page.'
+					}
+				]
 			}
 		]
 	},
 	changelogs: [
+		{
+			type: 'new',
+			version: '1.6.2 - 13 July, 2026',
+			list: [
+				'Added: Elementor getting started instructions.'
+			]
+		},
 		{
 			type: 'update',
 			version: '1.6.1 - 14 June, 2026',
@@ -184,7 +214,7 @@ export const welcomeInfo = (adminUrl) => ({
 			]
 		},
 		{
-			type: 'new',
+			type: 'update',
 			version: '1.6.0 - 04 June, 2026',
 			list: [
 				'New: Added uninstall data cleanup settings in dashboard.',
@@ -203,7 +233,7 @@ export const welcomeInfo = (adminUrl) => ({
 			]
 		}
 	],
-	changelogsLimit: 5,
+	changelogsLimit: 3,
 	changelogsReadMoreLabel: 'View More Changelogs',
 	proFeatures: [
 		'5 Premium Theme Customization',

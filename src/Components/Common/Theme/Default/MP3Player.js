@@ -161,9 +161,9 @@ const MP3Player = (selector, songs = [], options = {}, onIndexChange) => {
 		} else if (isAutoPlay) {
 			gotoNextSong(true);
 		} else {
-			disc.currentTime = 0;  
-			resetProgress();       
-			updatePlayPauseIcon(); 
+			disc.currentTime = 0;
+			resetProgress();
+			updatePlayPauseIcon();
 		}
 	});
 

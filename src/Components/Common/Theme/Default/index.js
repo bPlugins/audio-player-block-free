@@ -3,7 +3,7 @@ import MP3Player from './MP3Player';
 import { downloadIcon, nextIcon, playIcon, prevIcon } from '../../../../utils/icons';
 
 const Default = ({ attributes }) => {
-	const { audioProperties, elements = {}, options = {} } = attributes;
+	const { audioProperties, elements = {}, options = {} } = attributes || {};
 
 	const [activeIndex, setActiveIndex] = useState(0);
 	const defaultRef = useRef(null);
@@ -21,7 +21,7 @@ const Default = ({ attributes }) => {
 		</div>
 
 		<div className='contentBox'>
-			<audio id='disc'></audio>
+			<audio id='disc' ></audio>
 
 			<div className='info'>
 				<h2 id='title' className='title'></h2>

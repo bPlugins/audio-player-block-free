@@ -23,9 +23,9 @@ const SwiperSlider = forwardRef(({ playTrack, attributes }, ref) => {
 
 
   return <div className="slider">
-     <span className="playerTop">
-            {elements?.download && <a className="control" href={audioProperties[activeSlide]?.audio?.url} download>{downloadIcon}</a>}
-     </span>
+    <span className="playerTop">
+      {elements?.download && <a className="control" href={audioProperties[activeSlide]?.audio?.url} download>{downloadIcon}</a>}
+    </span>
     <Swiper
       modules={[EffectCoverflow, A11y]}
       effect={'coverflow'}

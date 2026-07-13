@@ -8,7 +8,7 @@ import Item from "./Item";
 import ItemsPanel from "../../Panel/ItemsPanel/ItemsPanel";
 
 const General = ({ attributes, setAttributes, premiumProps, device, pricingURL }) => {
-  const { options = {} } = attributes;
+  const { options = {} } = attributes || {};
   const { theme } = options;
 
   return (
@@ -30,6 +30,7 @@ const General = ({ attributes, setAttributes, premiumProps, device, pricingURL }
         <Notice status='premium' isIcon={true} className='mt10 mb20'>
           {__('OneHaash, Wooden, Lite, and Card themes are available in the Pro version.', 'audio-player-block')}
         </Notice>
+
         <ItemsPanel
           {...{ attributes, setAttributes, premiumProps, device }}
           arrKey="audioProperties"
