@@ -123,7 +123,7 @@ export const pricingInfo = {
 }
 
 export const welcomeInfo = (adminUrl) => ({
-	keywords: ['Audio Player', 'Gutenberg Block', 'Shortcode', 'Playlist Support', 'Audio Block', 'Volume Customization'],
+	keywords: ['Audio Player', 'Gutenberg Block', 'Shortcode', 'Playlist Support', 'Audio Block'],
 	keywordsLabel: 'Features',
 	gettingStarted: {
 		tabs: [
@@ -199,6 +199,13 @@ export const welcomeInfo = (adminUrl) => ({
 		]
 	},
 	changelogs: [
+		{
+			type: 'fix',
+			version: '1.6.3 - 22 Sep, 2026',
+			list: [
+				'Security: Fixed a stored XSS issue where the Audio File URL could be set to a javascript:/data: link that ran in a higher-privileged user\'s browser when the download control was clicked.'
+			]
+		},
 		{
 			type: 'new',
 			version: '1.6.2 - 13 July, 2026',

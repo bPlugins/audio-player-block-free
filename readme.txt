@@ -4,7 +4,7 @@ Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, audio player block, mp3 player, Gutenberg block
 Requires at least: 6.5
 Tested up to: 7.0
-Stable tag: 1.6.2
+Stable tag: 1.6.3
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -63,10 +63,10 @@ You can find the source code, report bugs, and contribute to the development of 
 
 = bpl-tools =
 
-* Source / GitHub: https://github.com/bPlugins/bpl-tools
-* License: GPL-2.0-or-later – https://www.gnu.org/licenses/gpl-2.0.html
-* Purpose: Shared utility library providing admin dashboard components and common Gutenberg editor controls.
-* External Services: The library may connect to bPlugins, WordPress.org, and Freemius services for product data and checkout functionality. See full details: https://github.com/bPlugins/bpl-tools#external-requests--why-they-are-made
+* **Source / GitHub**: https://github.com/bPlugins/bpl-tools
+* **License**: GPL-2.0-or-later – https://www.gnu.org/licenses/gpl-2.0.html
+* **Purpose**: Shared utility library providing admin dashboard components and common Gutenberg editor controls.
+* **External Services**: The library may connect to bPlugins, WordPress.org, and Freemius services for product data and checkout functionality. See full details: https://github.com/bPlugins/bpl-tools#external-requests--why-they-are-made
 
 
 = Feedback =
@@ -150,7 +150,10 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 12. ShortCode Generator
 
 
-== Changelog == 
+== Changelog ==
+
+= 1.6.3 - 22 Sep, 2026 =
+* **Security:** Fixed a stored XSS issue where the Audio File URL could be set to a `javascript:`/`data:` link that ran in a higher-privileged user's browser when the download control was clicked. Audio URLs are now validated against an allowlist of safe protocols both when saved and when rendered.
 
 = 1.6.2 - 13 July, 2026 =
 * **Added:** Elementor getting started instructions.

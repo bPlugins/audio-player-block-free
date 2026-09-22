@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import MP3Player from './MP3Player';
 import { downloadIcon, nextIcon, playIcon, prevIcon } from '../../../../utils/icons';
+import { sanitizeUrl } from '../../../../utils/sanitizeUrl';
 
 const Default = ({ attributes }) => {
 	const { audioProperties, elements = {}, options = {} } = attributes || {};
@@ -21,7 +22,7 @@ const Default = ({ attributes }) => {
 		</div>
 
 		<div className='contentBox'>
-			<audio id='disc' ></audio>
+			<audio id='disc'></audio>
 
 			<div className='info'>
 				<h2 id='title' className='title'></h2>
@@ -53,7 +54,7 @@ const Default = ({ attributes }) => {
 			<span className="downloadArea">
 				<a
 					className="control"
-					href={audioProperties[activeIndex]?.audio?.url}
+					href={sanitizeUrl(audioProperties[activeIndex]?.audio?.url)}
 					download
 				>
 					{downloadIcon}

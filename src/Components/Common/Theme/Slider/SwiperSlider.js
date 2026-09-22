@@ -5,6 +5,7 @@ import 'swiper/css/pagination';
 import { A11y, EffectCoverflow } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { downloadIcon } from '../../../../utils/icons';
+import { sanitizeUrl } from '../../../../utils/sanitizeUrl';
 
 const defaultImg = "https://i.ibb.co.com/VtxvQ2s/pexels-ron-lach-10676939.jpg";
 
@@ -24,7 +25,7 @@ const SwiperSlider = forwardRef(({ playTrack, attributes }, ref) => {
 
   return <div className="slider">
     <span className="playerTop">
-      {elements?.download && <a className="control" href={audioProperties[activeSlide]?.audio?.url} download>{downloadIcon}</a>}
+      {elements?.download && <a className="control" href={sanitizeUrl(audioProperties[activeSlide]?.audio?.url)} download>{downloadIcon}</a>}
     </span>
     <Swiper
       modules={[EffectCoverflow, A11y]}

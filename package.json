@@ -1,6 +1,6 @@
 {
 	"name": "audio-player-block",
-	"version": "1.0.0",
+	"version": "1.6.3",
 	"description": "Listen music on the web.",
 	"scripts": {
 		"packages-update": "wp-scripts packages-update",
