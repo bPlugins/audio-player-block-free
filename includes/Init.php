@@ -18,7 +18,10 @@ class Init {
             return $content;
         }
 
-        return preg_replace_callback(
+        // content_save_pre receives slashed content (quotes are escaped as \"),
+        // so unslash before matching and re-slash the result before returning it -
+        // otherwise the "url" pattern never lines up and nothing gets replaced.
+        $sanitized = preg_replace_callback(
             '/"url"\s*:\s*"([^"]+)"/i',
             function( $matches ) {
                 $url = $matches[1];
@@ -29,8 +32,10 @@ class Init {
                 }
                 return '"url":"' . esc_url_raw( $url, array( 'http', 'https' ) ) . '"';
             },
-            $content
+            wp_unslash( $content )
         );
+
+        return wp_slash( $sanitized );
     }
 
     public function sanitizeRenderedBlockContent( $block_content, $block ) {
@@ -44,7 +49,10 @@ class Init {
                 $quote = $matches[1];
                 $url   = trim( str_replace( array( "\t", "\n", "\r" ), '', $matches[2] ) );
                 if ( preg_match( '/^(javascript|data|vbscript):/i', $url ) ) {
-                    return 'href=' . $quote . '#' . $quote;
+                    // Drop the href entirely rather than pointing it at '#', so an
+                    // <a download> with no safe URL is inert instead of prompting
+                    // the browser to "download" the current page.
+                    return '';
                 }
                 return $matches[0];
             },
