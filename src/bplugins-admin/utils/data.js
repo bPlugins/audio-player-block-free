@@ -200,45 +200,26 @@ export const welcomeInfo = (adminUrl) => ({
 	},
 	changelogs: [
 		{
+			version: '1.6.4 - 17 Nov, 2026',
+			type: 'enhancement',
+			list: [
+				'<strong>Enhancement:</strong> Added Black Friday promotional banner and campaign notices.'
+			]
+		},
+		{
 			type: 'fix',
 			version: '1.6.3 - 22 Sep, 2026',
 			list: [
-				'Security: Fixed a stored XSS issue where the Audio File URL could be set to a javascript:/data: link that ran in a higher-privileged user\'s browser when the download control was clicked.'
+				'<strong>Security:</strong> Fixed a stored XSS issue where the Audio File URL could be set to a javascript:/data: link that ran in a higher-privileged user\'s browser when the download control was clicked.'
 			]
 		},
 		{
 			type: 'new',
 			version: '1.6.2 - 13 July, 2026',
 			list: [
-				'Added: Elementor getting started instructions.'
+				'<strong>Added:</strong> Elementor getting started instructions.'
 			]
 		},
-		{
-			type: 'update',
-			version: '1.6.1 - 14 June, 2026',
-			list: [
-				'Updated: Modernized the admin settings dashboard layout.'
-			]
-		},
-		{
-			type: 'update',
-			version: '1.6.0 - 04 June, 2026',
-			list: [
-				'New: Added uninstall data cleanup settings in dashboard.',
-				'Improved: Unlocked previously locked pro fields in the Gutenberg editor and introduced a clean, non-intrusive notices UI to display premium feature requirements.',
-				'Update: Redesigned the shortcode copy-to-clipboard UI column in the audio player CPT admin table for a better user experience.',
-				'Update: Streamlined editor Settings controls for free users, focusing on Default and Slider theme controls.',
-				'Update: Removed Pro-only theme styling and assets to reduce package footprint.',
-			]
-		},
-		{
-			type: 'fix',
-			version: '1.5.2 - 09 April, 2026',
-			list: [
-				'Fix: Fixed class naming conflict and namespace resolution issue in LicenseActivation.',
-				'Update: Updated Freemius SDK new version.'
-			]
-		}
 	],
 	changelogsLimit: 3,
 	changelogsReadMoreLabel: 'View More Changelogs',

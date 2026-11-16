@@ -4,7 +4,7 @@ Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, audio player block, mp3 player, Gutenberg block
 Requires at least: 6.5
 Tested up to: 7.0
-Stable tag: 1.6.3
+Stable tag: 1.6.4
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -151,6 +151,9 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 
 == Changelog ==
+
+= 1.6.4 - 17 Nov, 2026 =
+* **Enhancement:** Added Black Friday promotional banner and campaign notices.
 
 = 1.6.3 - 22 Sep, 2026 =
 * **Security:** Fixed a stored XSS issue where the Audio File URL could be set to a `javascript:`/`data:` link that ran in a higher-privileged user's browser when the download control was clicked. Audio URLs are now validated against an allowlist of safe protocols both when saved and when rendered.
