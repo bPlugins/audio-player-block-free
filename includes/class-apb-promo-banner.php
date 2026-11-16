@@ -429,7 +429,7 @@ if ( ! class_exists( __NAMESPACE__ . '\APB_PromoBanner' ) ) {
             if ( $this->should_skip() ) { return; }
 
             $coupon_url = esc_url( self::DASHBOARD_URL );
-            $icon_url   = esc_url( plugins_url( 'assets/images/promo-icon.png', dirname( __FILE__ ) ) );
+            $icon_url   = esc_url( plugins_url( 'assets/images/promo-icon.png', dirname( __DIR__ ) . '/plugin.php' ) );
             ?>
             <div id="apb-promo-banner" class="notice">
 

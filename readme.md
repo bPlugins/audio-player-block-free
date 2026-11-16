@@ -102,13 +102,9 @@ Embed any saved Audio Player configuration anywhere on your site:
    ```bash
    npm start
    ```
-3. Compile minified assets for release:
+3. Compile minified assets & ZIP filefor release:
    ```bash
    npm run build
-   ```
-4. Package plugin into a clean distribution ZIP file:
-   ```bash
-   npm run make-zip
    ```
 
 ### Data Flow & Lifecycle
