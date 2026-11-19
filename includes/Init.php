@@ -11,6 +11,20 @@ class Init {
         add_action( 'init', [ $this, 'onInit' ] );
         add_filter( 'content_save_pre', [ $this, 'sanitizeAudioUrlsInContent' ] );
         add_filter( 'render_block', [ $this, 'sanitizeRenderedBlockContent' ], 10, 2 );
+
+        // The player CPT only works in the block editor (its content is a locked
+        // block template). Plugins like Classic Editor hook these filters at
+        // priority 100, so force the block editor for this CPT after them.
+        add_filter( 'use_block_editor_for_post_type', [ $this, 'forceBlockEditorForPostType' ], 9999, 2 );
+        add_filter( 'use_block_editor_for_post', [ $this, 'forceBlockEditorForPost' ], 9999, 2 );
+    }
+
+    public function forceBlockEditorForPostType( $use_block_editor, $post_type ) {
+        return 'audio_player_block' === $post_type ? true : $use_block_editor;
+    }
+
+    public function forceBlockEditorForPost( $use_block_editor, $post ) {
+        return ( $post && 'audio_player_block' === get_post_type( $post ) ) ? true : $use_block_editor;
     }
 
     public function sanitizeAudioUrlsInContent( $content ) {

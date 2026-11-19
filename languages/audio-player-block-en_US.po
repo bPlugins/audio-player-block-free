@@ -1,137 +1,213 @@
-# Copyright (C) 2023 bPlugins LLC
+# Copyright (C) 2026 bPlugins
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: Audio Player Block 1.1.0\n"
+"Project-Id-Version: Audio Player Block – Advanced Block for Embedding Audio Files 1.6.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/audio-player-block\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-09-30T10:59:52+00:00\n"
+"POT-Creation-Date: 2026-11-19T16:19:31+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.6.0\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: audio-player-block\n"
 
 #. Plugin Name of the plugin
-msgid "Audio Player Block"
+#: plugin.php
+msgid "Audio Player Block – Advanced Block for Embedding Audio Files"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: plugin.php
+msgid "https://bplugins.com/products/audio-player-block/"
 msgstr ""
 
 #. Description of the plugin
+#: plugin.php
 msgid "Listen Music on the Web."
 msgstr ""
 
 #. Author of the plugin
-msgid "bPlugins LLC"
+#: plugin.php
+msgid "bPlugins"
 msgstr ""
 
 #. Author URI of the plugin
-msgid "http://bplugins.com"
+#: plugin.php
+msgid "https://bplugins.com"
 msgstr ""
 
-#: dist/editor.js:1
-#: dist/editor.js:841
-msgid "Add or Remove Audios"
+#: includes/AdminMenu.php:17
+#: includes/AdminMenu.php:18
+msgid "Help & Demos"
 msgstr ""
 
-#: dist/editor.js:1
-#: dist/editor.js:847
-msgid "Title:"
+#: includes/Ajax.php:18
+msgid "Invalid security token."
 msgstr ""
 
-#: dist/editor.js:1
-#: dist/editor.js:852
-msgid "Artist:"
+#: includes/Ajax.php:23
+msgid "You do not have permission to manage options."
 msgstr ""
 
-#: dist/editor.js:1
-#: dist/editor.js:856
-msgid "Audio File:"
+#: includes/Ajax.php:35
+msgid "Data will be deleted on uninstall."
 msgstr ""
 
-#: dist/editor.js:1
-#: dist/editor.js:857
-msgid "Enter Audio URL"
+#: includes/Ajax.php:36
+msgid "Data will be preserved on uninstall."
 msgstr ""
 
-#: dist/editor.js:1
-#: dist/editor.js:859
-msgid "Cover Photo:"
+#: includes/class-apb-promo-banner.php:149
+msgid "Black Friday Sale – 45% OFF"
 msgstr ""
 
-#: dist/editor.js:1
-#: dist/editor.js:860
-msgid "Enter Cover Image URL"
+#: includes/class-apb-promo-banner.php:442
+#: includes/class-apb-promo-banner.php:443
+msgid "Audio Player Block"
 msgstr ""
 
-#: dist/editor.js:1
-#: dist/editor.js:863
-msgid "Remove"
+#: includes/class-apb-promo-banner.php:450
+msgid "Audio Player Block's Biggest Black Friday Sale is Live – Up to 45% OFF!"
 msgstr ""
 
-#: dist/editor.js:1
-#: dist/editor.js:865
-msgid "Duplicate"
+#: includes/class-apb-promo-banner.php:453
+msgid "The biggest deal of the year is here! This is your once-a-year opportunity to upgrade to Audio Player Block Pro at an exclusive price."
 msgstr ""
 
-#: dist/editor.js:1
-#: dist/editor.js:871
-#: dist/editor.js:872
-msgid "Add New Audio"
+#: includes/class-apb-promo-banner.php:453
+msgid "Unlock 5 premium themes, waveform visualizer, audio download, and everything you need to showcase your audio playback!"
 msgstr ""
 
-#: dist/editor.js:1
-#: dist/editor.js:877
-msgid "Player Settings"
+#: includes/class-apb-promo-banner.php:456
+msgid "5 Premium Player Themes"
 msgstr ""
 
-#: dist/editor.js:1
-#: dist/editor.js:878
-msgid "Width:"
+#: includes/class-apb-promo-banner.php:457
+msgid "Waveform Visualizer"
 msgstr ""
 
-#: dist/editor.js:1
-#: dist/editor.js:884
-msgid "Player in left"
+#: includes/class-apb-promo-banner.php:458
+msgid "Audio Download Option"
 msgstr ""
 
-#: dist/editor.js:1
-#: dist/editor.js:885
-msgid "Player in center"
+#: includes/class-apb-promo-banner.php:459
+msgid "Playback Speed Control"
 msgstr ""
 
-#: dist/editor.js:1
-#: dist/editor.js:886
-msgid "Player in right"
+#: includes/class-apb-promo-banner.php:465
+msgid "Unlock PRO Features →"
 msgstr ""
 
-#: dist/editor.js:1
-#: dist/editor.js:986
-msgid "Please add audio file first!"
+#: includes/class-apb-promo-banner.php:472
+msgid "Dismiss"
 msgstr ""
 
-#: inc/block.json
+#: includes/class-apb-promo-banner.php:473
+msgid "Dismiss banner"
+msgstr ""
+
+#: includes/CustomColumn.php:17
+msgid "Shortcode"
+msgstr ""
+
+#: includes/CustomColumn.php:18
+msgid "Date"
+msgstr ""
+
+#: includes/CustomColumn.php:26
+#: build/admin-post.js:1
+msgid "Copy To Clipboard"
+msgstr ""
+
+#: includes/Init.php:81
+msgid "Audio Player"
+msgstr ""
+
+#: includes/Init.php:83
+msgctxt "audio_player_block"
+msgid "Add New"
+msgstr ""
+
+#: includes/Init.php:84
+msgid "Add New Player"
+msgstr ""
+
+#: includes/Init.php:85
+msgid "Edit Player"
+msgstr ""
+
+#: includes/Init.php:86
+msgid "There was no player please add one"
+msgstr ""
+
+#: includes/ShortCode.php:17
+msgid "Error: Missing Audio Player ID."
+msgstr ""
+
+#: build/admin-dashboard.js:2
+msgid "Failed to save setting."
+msgstr ""
+
+#: build/admin-dashboard.js:2
+msgid "Delete Data on Uninstall"
+msgstr ""
+
+#: build/admin-dashboard.js:2
+msgid "When enabled, all plugin data will be permanently deleted when you uninstall (delete) the plugin. This includes:"
+msgstr ""
+
+#: build/admin-dashboard.js:2
+msgid "All Audio Player posts (audio_player_block post type)"
+msgstr ""
+
+#: build/admin-dashboard.js:2
+msgid "All plugin settings and options"
+msgstr ""
+
+#: build/admin-dashboard.js:2
+msgid "⚠️ This action cannot be undone. Your data will be safe if you only deactivate the plugin."
+msgstr ""
+
+#: build/admin-dashboard.js:2
+msgid "Are you sure? This will permanently delete all Audio Player Block data (configurations and settings) when the plugin is uninstalled."
+msgstr ""
+
+#: build/admin-dashboard.js:2
+msgid "Data will be deleted on uninstall"
+msgstr ""
+
+#: build/admin-dashboard.js:2
+msgid "Data will be preserved on uninstall"
+msgstr ""
+
+#: build/admin-post.js:1
+msgid "Copied Successfully!"
+msgstr ""
+
+#: build/block.json
 msgctxt "block title"
 msgid "Audio Player"
 msgstr ""
 
-#: inc/block.json
+#: build/block.json
 msgctxt "block description"
 msgid "Listen music on the web."
 msgstr ""
 
-#: inc/block.json
+#: build/block.json
 msgctxt "block keyword"
 msgid "music player"
 msgstr ""
 
-#: inc/block.json
+#: build/block.json
 msgctxt "block keyword"
 msgid "audio player"
 msgstr ""
 
-#: inc/block.json
+#: build/block.json
 msgctxt "block keyword"
 msgid "mp3 player block"
 msgstr ""

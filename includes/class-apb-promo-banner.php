@@ -242,11 +242,11 @@ if ( ! class_exists( __NAMESPACE__ . '\APB_PromoBanner' ) ) {
                 flex: 1;
                 padding: 16px 24px;
                 display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: center;
-                gap: 10px;
-                padding-right: 38px;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                gap: 24px;
+                padding-right: 56px;
             }
 
             /* Left Text Stack */
@@ -254,6 +254,8 @@ if ( ! class_exists( __NAMESPACE__ . '\APB_PromoBanner' ) ) {
                 display: flex;
                 flex-direction: column;
                 gap: 6px;
+                flex: 1;
+                min-width: 0;
                 max-width: 960px;
             }
             #apb-promo-banner .apb-headline {
@@ -321,7 +323,8 @@ if ( ! class_exists( __NAMESPACE__ . '\APB_PromoBanner' ) ) {
                 align-items: center !important;
                 gap: 6px !important;
                 line-height: 1.2 !important;
-                margin-top: 2px !important;
+                margin: 0 !important;
+                flex-shrink: 0 !important;
             }
             #apb-promo-banner .apb-btn-cta:hover {
                 background: var(--bpl-primary-hover) !important;
@@ -378,6 +381,7 @@ if ( ! class_exists( __NAMESPACE__ . '\APB_PromoBanner' ) ) {
                 #apb-promo-banner .apb-content-zone {
                     flex-direction: column;
                     align-items: flex-start;
+                    gap: 12px;
                     padding: 14px 16px;
                 }
             }

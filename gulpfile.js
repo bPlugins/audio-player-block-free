@@ -18,8 +18,9 @@ function bundle() {
       "!.eslintrc.js",
       "!README.md",
       "!readme.md",
-      "!todo.txt"
-    ])
+      "!todo.txt",
+      "!scripts/**"
+    ], { encoding: false }) // gulp 5 reads files as UTF-8 by default, which corrupts images/fonts
     .pipe(gulp.dest("bundled/audio-player-block"));
 }
 
@@ -28,7 +29,7 @@ exports.bundle = bundle;
 exports.zip = () => {
   return (
     gulp
-      .src(["bundled/**"])
+      .src(["bundled/**"], { encoding: false })
       .pipe(zip("audio-player-block.zip"))
       .pipe(gulp.dest("zip"))
   );

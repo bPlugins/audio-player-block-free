@@ -31,6 +31,7 @@ export const dashboardInfo = (info) => {
 			// docs: `https://bplugins.com/docs/${slug}/`,
 			docs: `https://wordpress.org/plugins/${slug}/#installation`,
 			pricing: `https://bplugins.com/products/${slug}/pricing`,
+			featureRequest: `https://bplugins.com/products/${slug}/roadmap-and-ideas/`
 		},
 		freemius: {
 			product_id: 17222,
@@ -200,14 +201,14 @@ export const welcomeInfo = (adminUrl) => ({
 	},
 	changelogs: [
 		{
-			version: '1.6.4 - 17 Nov, 2026',
-			type: 'enhancement',
+			version: '1.6.5 - 19 Nov, 2026',
+			type: 'fix',
 			list: [
-				'<strong>Enhancement:</strong> Added Black Friday promotional banner and campaign notices.'
+				'<strong>Fix:</strong> Audio Player posts now always open in the block editor, even when the Classic Editor plugin is active, so the player block and its settings load correctly.'
 			]
 		},
 		{
-			type: 'fix',
+			type: 'security',
 			version: '1.6.3 - 22 Sep, 2026',
 			list: [
 				'<strong>Security:</strong> Fixed a stored XSS issue where the Audio File URL could be set to a javascript:/data: link that ran in a higher-privileged user\'s browser when the download control was clicked.'

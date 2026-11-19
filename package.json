@@ -1,6 +1,6 @@
 {
 	"name": "audio-player-block",
-	"version": "1.6.4",
+	"version": "1.6.5",
 	"description": "Listen music on the web.",
 	"scripts": {
 		"packages-update": "wp-scripts packages-update",
@@ -9,12 +9,11 @@
 		"lint:js": "wp-scripts lint-js",
 		"format": "wp-scripts format",
 		"start": "wp-scripts start --webpack-copy-php",
-		"i18n-pot": "wp i18n make-pot . languages/audio-player-block.pot --exclude=\"src\" && cp ./languages/audio-player-block.pot ./languages/audio-player-block-en_US.po",
-		"i18n-json": "wp i18n make-json languages/ --no-purge",
-		"i18n-mo": "wp i18n make-mo languages/",
-		"i18n": "npm run i18n-pot && npm run i18n-json && npm run i18n-mo",
+		"i18n": "node scripts/i18n.js --pot=languages/audio-player-block.pot --po=languages/audio-player-block-en_US.po",
 		"plugin-zip": "wp-scripts plugin-zip",
-		"build": "wp-scripts build --webpack-copy-php && (npm run i18n || node -e \"console.log('i18n failed')\") && gulp bundle && gulp zip && node -e \"const fs = require('fs'); const rm = () => { try { fs.rmSync('bundled', { recursive: true, force: true }); } catch (e) { if (e.code === 'EPERM') { setTimeout(rm, 100); } else { throw e; } } }; rm();\""
+		"build": "wp-scripts build --webpack-copy-php && (npm run i18n || node -e \"console.log('i18n failed')\") && gulp bundle && gulp zip && node -e \"const fs = require('fs'); const rm = () => { try { fs.rmSync('bundled', { recursive: true, force: true }); } catch (e) { if (e.code === 'EPERM') { setTimeout(rm, 100); } else { throw e; } } }; rm();\"",
+		"bundle": "gulp bundle",
+		"zip": "gulp zip"
 	},
 	"author": "Md. Shamim Islam",
 	"license": "GPL-3.0-or-later",
@@ -31,6 +30,8 @@
 		"gulp-zip": "^6.1.0"
 	},
 	"files": [
+		"assets",
+		"includes",
 		"build",
 		"languages",
 		"index.php",
