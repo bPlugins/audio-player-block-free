@@ -65,7 +65,7 @@ Embed any saved Audio Player configuration anywhere on your site:
 
 - **HTML5 Audio API:** Renders high-fidelity audio controls and waveform structures.
 - **Frontend JS/React:** React is used to drive the custom Gutenberg block interfaces, custom sidebars, and admin dashboard fields.
-- **Build System:** Gulp handles packaging and ZIP compilation, while Webpack via `@wordpress/scripts` handles block transpilation and code splitting.
+- **Build System:** Webpack via `@wordpress/scripts` handles block transpilation and code splitting, WP-CLI generates the translation files, and Gulp packages the release ZIP.
 - **bpl-tools (Shared Utility):** A shared utility library providing admin dashboard components and common Gutenberg editor controls.
   - **Source/GitHub:** [bPlugins/bpl-tools](https://github.com/bPlugins/bpl-tools)
   - **License:** GPL-2.0-or-later
@@ -90,9 +90,15 @@ Embed any saved Audio Player configuration anywhere on your site:
   - [CustomColumn.php](file:///c:/Users/Shamim%20bPlugins/Local%20Sites/free-plugins-dev/app/public/wp-content/plugins/audio-player-block/includes/CustomColumn.php): Appends a quick copy-to-clipboard shortcode column in the Audio Player CPT admin table.
   - [RestAPI.php](file:///c:/Users/Shamim%20bPlugins/Local%20Sites/free-plugins-dev/app/public/wp-content/plugins/audio-player-block/includes/RestAPI.php): Processes backend AJAX settings requests securely.
 - **`/build`**: Compiled and bundled files (automatically generated via Webpack).
+- **`/languages`**: Translation files (`.pot`, `.po`, `.mo` and JS `.json`), regenerated on every build.
+- **`/scripts`**: Build helpers (not included in the release ZIP).
+  - `i18n.js`: Regenerates the translation files through WP-CLI.
+- **`/zip`**: The release ZIP created by the build.
 - **`plugin.php`**: The main executable and plugin bootstrapper.
 
 ### Development Workflow
+
+Requirements: Node.js and [WP-CLI](https://wp-cli.org/) (`wp` available in your `PATH`).
 
 1. Install development dependencies:
    ```bash
@@ -102,10 +108,22 @@ Embed any saved Audio Player configuration anywhere on your site:
    ```bash
    npm start
    ```
-3. Compile minified assets & ZIP filefor release:
+3. Build for release. This compiles the assets, regenerates the translation files and creates `zip/audio-player-block.zip`:
    ```bash
    npm run build
    ```
+
+Individual steps, if you only need one of them:
+
+| Command | What it does |
+| :--- | :--- |
+| `npm run i18n` | Regenerates `languages/` (`.pot`, `.po`, `.json`, `.mo`). |
+| `npm run bundle` | Copies the release files into `bundled/audio-player-block`. |
+| `npm run zip` | Zips `bundled/` into `zip/audio-player-block.zip`. |
+
+**Notes**
+- `scripts/i18n.js` runs WP-CLI with a 1 GB memory limit (`make-pot` runs out of PHP's default 128 MB on the built JS) and enables PHP's `mbstring` when Local's PHP binary has no `php.ini`. If it still fails, the build prints `i18n failed` and carries on, so the ZIP is still created.
+- Gulp reads files as binary (`encoding: false`). Gulp 5 reads files as UTF-8 by default, which corrupts images and fonts inside the ZIP.
 
 ### Data Flow & Lifecycle
 1. **Editor Side:** Block configurations are configured via React panels in `/src/Components` and stored as serialized block attribute comments in the post content database.
